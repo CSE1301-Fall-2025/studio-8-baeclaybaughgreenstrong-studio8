@@ -4,16 +4,8 @@ import support.cse131.NotYetImplementedException;
 
 public class SelectAllQuestion extends MultipleChoiceQuestion {
 
-	/**
-	 * Constructor
-	 * 
-	 * @param prompt
-	 * @param answer
-	 * @param choices
-	 */
 	public SelectAllQuestion(String prompt, String answer, String[] choices) {
-		// Hint: 1 point per choice
-		throw new NotYetImplementedException();
+		super(prompt, answer, choices.length, choices);
 	}
 	
 	/**
@@ -21,7 +13,7 @@ public class SelectAllQuestion extends MultipleChoiceQuestion {
 	 * @param String givenAnswer to check for points
 	 */
 	public int checkAnswer(String givenAnswer) {
-		throw new NotYetImplementedException();
+		return super.getPoints() - findMissingCorrectAnswers(givenAnswer) - findIncorrectGivenAnswers(givenAnswer);
 	}
 
 	/**
